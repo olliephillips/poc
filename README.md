@@ -14,5 +14,6 @@ MIT License.
 * mobile-on - Add an element in mobile. 
 
 ##Credits. 
-Uses normalize.css for the resets
+Uses normalize.css for the resets.
+
 Used a CSS burger meny example found on CSS Tricks.
