@@ -1,0 +1,67 @@
+/* POC. A minute CSS grid framework - just the bits I needed. Work in progress.
+ * Ollie Phillips 2015
+ * MIT License
+ */
+
+/* Resets courtesy of normalize.css v3.0.2 */
+@import url("normalize.css");
+
+/* Media queries */
+@media (min-width: 50em) {
+ 	.row {position:relative;width:100%;height:auto;clear:both;}
+	.col {float:left;height:auto;padding:1.6%;margin:1.6%;}
+	.one {width:93.6%;}	.two {width:43.6%;} .three {width:26.9%;} .four {width:18.6%;} .nest {padding:0px;}
+	.col.two.nest {width:46.801%;}
+	.nest > .row > .two:first-child {margin-left:0px;}
+	.nest > .row > .two {width:42%;padding:3.2%;margin-top:0px;margin-bottom:0px;}		
+	.nest > .row > .two:last-child {margin-right:0px;}
+	.nest > .row > .three:first-child {margin-left:0px;}
+	.nest > .row > .three {width:24.8%;padding:3.2%;margin-top:0px;margin-bottom:0px;}		
+	.nest > .row > .three:last-child {margin-right:0px;}
+	.break {width:96.8%;margin:0px;} .break.nest {width:100%;} .mobile-on {display:none!important} .mobile-off {display:block;} .center {text-align:center;}
+}
+@media (max-width: 50em) {
+	.row {position:relative;width:100%;height:auto;clear:both;}
+	.col{width:93.6%;height:auto;padding:1.6%;margin:1.6%}
+	.nest {padding:0px;}
+	.col.two.nest {width:96.8%;}
+	.nest > .row > .two {width:96.8%;margin-left:0px;margin-right:0px;padding:1.6%;margin-top:1.6%;margin-bottom:1.6%;}	
+	.nest > .row > .three {width:96.8%;margin-left:0px;margin-right:0px;padding:1.6%;margin-top:1.6%;margin-bottom:1.6%}
+	.break {width:96.8%;margin:0px;} .break.nest {width:100%;margin-top:-1.6%;} .mobile-on {display:block;} .button.mobile-on{display:inline-block;}
+	.mobile-off {display:none!important;} div{text-align:center;} .footer{margin-top:-1.6%;}
+}
+
+/* Generic CSS */
+.header {height:50px;padding:15px;background-color:#333333;clear:both;margin-top:-10px!important;}
+.burger {margin-top:10px;float:left;}
+.burger-text {float:left;padding-left:25px;margin-top:25px;font-size:14px;color:#666666;}
+.logo {color:#FFFFFF;margin-top:5px;float:right;}
+.footer {height:100px;padding:20px;background-color:#333333;clear:both;}
+.clear {clear:both;}
+
+/* Basic Button */
+.button {display: inline-block; border:2px solid #FFFFFF;padding:30px;background: rgba(255,255,255,0.2);min-width:200px;max-width:300px;margin:10px;border-radius:5px;text-decoration:none;color: #FFFFFF;-webkit-transition: border 0.25s, background 0.75s, color 1s; transition: border 0.15s, background 0.40s, color 0.60s;transition-timing-function: ease-in-out;}
+.button:hover {border:2px solid #eeeeee;background: rgba(255, 255, 255, 0.4); color:#ffffff;}
+
+/* Basic form stying */
+
+label {font-size:20px;margin-right:20px;}
+input {display: inline-block; border:2px solid #FFFFFF;font-size:20px;padding:15px;background: rgba(0,0,0,0.3);}
+
+/* Basic CSS Burger menu - Thanks CSS Tricks! */
+#nav-toggle {cursor: pointer;padding: 10px 35px 16px 0px;}
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {cursor: pointer; border-radius: 1px;height: 5px;width: 35px;background: #666666;position: absolute;display: block;content: '';}
+#nav-toggle span:before {top: -10px;}
+#nav-toggle span:after {bottom: -10px;}
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {transition: all 500ms ease-in-out;}
+#nav-toggle.active span {background-color: transparent;}
+#nav-toggle.active span:before, #nav-toggle.active span:after {top: 0;}
+#nav-toggle.active span:before {-webkit-transform: rotate(45deg);transform: rotate(45deg);}
+#nav-toggle.active span:after {-webkit-transform: rotate(-45deg);transform: rotate(-45deg);}
+
+/* Menu overlay */
+div#menu{z-index:1000;margin-top:-120%;background-color: rgba(0, 0, 0, 0.0);position:absolute;top:70px;left:0px;width:100%;height:0%;color:#000000;-webkit-transition: all 0.5s ;transition: all 0.5s;transition-timing-function: ease-in-out;}
+div#menu.toggle {display:block;height:100%;margin:0px;background-color: rgba(0, 0, 0, 0.6);}	
+div#menu > ul {text-align:center;list-style:none;margin:0px;padding:0px;margin-top:40px;}
+div#menu  > ul > li {margin-top:10px;margin-bottom:10px;font-size:32px;}
+div#menu  > ul > li> a {color: rgba(255,255,255,0.9);text-decoration:none;}
